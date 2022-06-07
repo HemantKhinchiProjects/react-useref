@@ -6,9 +6,12 @@ const UnControlled = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    console.log(yName.current.value);
     const yourName = yName.current.value;
     setShow(yourName);
-    yourName === '' ? alert('Please fill correct data') : setShow(true);
+    if (yName.current.value == '') {
+      alert('Please fill correct data');
+    }
   };
   return (
     <div>
@@ -26,7 +29,7 @@ const UnControlled = () => {
         </div>
         <button className="btn btn-primary">Submit</button>
       </form>
-      <p>{show ? `Your are wright this ${yName.current.value}` : ''}</p>
+      <p>{show ? `Your are wright this ${show}` : ''}</p>
     </div>
   );
 };
