@@ -9,7 +9,7 @@ const UnControlled = () => {
     //console.log(yName.current.value);
     const yourName = yName.current.value;
     setShow(yourName);
-    if (yName.current.value == '') {
+    if (yourName == '') {
       alert('Please fill correct data');
     }
   };
