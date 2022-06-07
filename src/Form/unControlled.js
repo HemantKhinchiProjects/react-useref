@@ -6,7 +6,7 @@ const UnControlled = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(yName.current.value);
+    //console.log(yName.current.value);
     const yourName = yName.current.value;
     setShow(yourName);
     if (yName.current.value == '') {
