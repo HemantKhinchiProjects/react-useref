@@ -1,10 +1,14 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 const UnControlled = () => {
   //it like a useState only its preserve the value. NO RENDER
   const yName = useRef(null);
+  const [show, setShow] = useState(false);
+
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(yName);
+    const yourName = yName.current.value;
+    setShow(yourName);
+    yourName === '' ? alert('Please fill correct data') : setShow(true);
   };
   return (
     <div>
@@ -20,10 +24,9 @@ const UnControlled = () => {
             ref={yName}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <button className="btn btn-primary">Submit</button>
       </form>
+      <p>{show ? `Your are wright this ${yName.current.value}` : ''}</p>
     </div>
   );
 };
